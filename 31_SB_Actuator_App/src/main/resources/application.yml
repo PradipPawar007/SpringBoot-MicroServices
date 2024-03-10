@@ -1,0 +1,11 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+#        exclude: "Beans"  this syntax to exclude it means we can't see how many beans are created 
+
+  endpoint:
+    shutdown:
+      enabled: true
+        

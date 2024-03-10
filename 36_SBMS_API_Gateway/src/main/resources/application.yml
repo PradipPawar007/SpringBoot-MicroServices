@@ -1,0 +1,21 @@
+server:
+  port: 2222
+  
+spring:
+  application:
+    name: CLOUD-API-GATEWAY
+    
+  cloud:
+    gateway:
+      routes:
+      - id: greet-api
+        uri: lb://GREET-API
+        predicates:
+        - Path=/greet
+      - id: welcome-api
+        uri: lb://WELCOME-API
+        predicates:
+        - Path=/welcome
+        
+  main:
+    web-application-type: reactive
